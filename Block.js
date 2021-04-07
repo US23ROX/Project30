@@ -13,9 +13,6 @@ class Block{
     }
     display(){
       var pos= this.body.position;
-      rectMode(CENTER);
-      rect(pos.x,pos.y,this.width, this.height);
-
       console.log(this.body.speed);
       if(this.body.speed>3){
       World.remove(world,this.body);
@@ -25,5 +22,9 @@ class Block{
       image(this.image,this.body.position.x,this.body.position.y);
       pop();
     }
+      else{
+        rectMode(CENTER);
+        rect(pos.x,pos.y,this.width, this.height);
+      }
   }
 }
